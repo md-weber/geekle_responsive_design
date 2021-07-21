@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_design/screens/main/dream_selector.dart';
 import 'package:responsive_design/screens/main/time_selector.dart';
-import 'package:responsive_design/utils/styling.dart';
 import 'package:super_editor/super_editor.dart';
 
 class SmallMode extends StatelessWidget {
@@ -11,7 +10,6 @@ class SmallMode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var verticalDensity = Theme.of(context).visualDensity.vertical;
     return Column(
       children: [
         const SizedBox(
@@ -20,18 +18,14 @@ class SmallMode extends StatelessWidget {
             scrollDirection: Axis.horizontal,
           ),
         ),
-        Divider(
-          height: Insets.small + verticalDensity * 4,
-        ),
+        // TODO: Add a Devider
         const SizedBox(
           height: 50,
           child: DreamSelector(
             scrollDirection: Axis.horizontal,
           ),
         ),
-        Divider(
-          height: Insets.small + verticalDensity * 4,
-        ),
+        // TODO: Add a Devider
         Expanded(
           flex: 8,
           child: LayoutBuilder(
@@ -39,7 +33,8 @@ class SmallMode extends StatelessWidget {
               editor: docEditor,
               maxWidth: constraints.maxWidth,
               padding: EdgeInsets.all(
-                Theme.of(context).visualDensity.horizontal + Insets.medium * 4,
+                // TODO: Replace 4 with a Inset
+                Theme.of(context).visualDensity.horizontal + 4 * 4,
               ),
             ),
           ),

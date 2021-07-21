@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_design/screens/main/small_mode.dart';
-import 'package:responsive_design/screens/main/wide_mode.dart';
-import 'package:responsive_design/utils/device_info.dart';
 import 'package:super_editor/super_editor.dart';
 
 class DreamerNotebook extends StatefulWidget {
@@ -52,9 +50,7 @@ class _DreamerNotebookState extends State<DreamerNotebook> {
   }
 
   Widget buildDependingScreen(BuildContext context, DocumentEditor docEditor) {
-    ScreenType screenType = DeviceScreen.get(context);
-
-    if (screenType == ScreenType.DESKTOP) return WideMode(docEditor: docEditor);
+    // TODO: Check for Large Screens and return WideMode
     return SmallMode(docEditor: docEditor);
   }
 }
